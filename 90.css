@@ -1,0 +1,298 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #7c3aed;
+  --primary-dark: #5b21b6;
+  --secondary: #06b6d4;
+  --danger: #ef4444;
+  --success: #10b981;
+  --text: #1e293b;
+  --muted: #64748b;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 20px 60px rgba(30, 41, 59, 0.12);
+}
+
+body {
+  min-height: 100vh;
+  padding: 70px 20px;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at top left, #ddd6fe 0, transparent 35%),
+    radial-gradient(circle at bottom right, #cffafe 0, transparent 35%),
+    linear-gradient(135deg, #f8fafc, #eef2ff);
+  color: var(--text);
+}
+
+/* Main Heading */
+
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 35px;
+  background: linear-gradient(90deg, #7c3aed, #0891b2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeDown 0.7s ease;
+}
+
+/* Input Field */
+
+.input {
+  display: block;
+  width: min(100%, 520px);
+  margin: 0 auto 18px;
+  padding: 18px 20px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  outline: none;
+  box-shadow: 0 5px 20px rgba(30, 41, 59, 0.04);
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:hover {
+  border-color: #c4b5fd;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 5px rgba(124, 58, 237, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Add Button */
+
+.add {
+  display: block;
+  width: min(100%, 520px);
+  margin: 0 auto 45px;
+  padding: 17px 25px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.25);
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+}
+
+.add:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(124, 58, 237, 0.35);
+}
+
+.add:active {
+  transform: scale(0.98);
+}
+
+/* List Heading */
+
+h2 {
+  width: min(100%, 650px);
+  margin: 0 auto 20px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 55px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+}
+
+/* Shopping List Container */
+
+.result {
+  width: min(100%, 650px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Individual Shopping Items */
+
+.result > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 16px 18px;
+  overflow-wrap: anywhere;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(30, 41, 59, 0.05);
+  animation: slideIn 0.35s ease both;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.result > div:hover {
+  transform: translateY(-3px);
+  border-color: #c4b5fd;
+  box-shadow: 0 12px 28px rgba(30, 41, 59, 0.09);
+}
+
+/* Item Text */
+
+.result > div {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Edit and Delete Buttons */
+
+.result button {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 11px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease,
+              filter 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.result button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.result button:active {
+  transform: scale(0.96);
+}
+
+/* Edit Button */
+
+.result button:first-of-type {
+  margin-left: auto;
+  color: #6d28d9;
+  background: #ede9fe;
+}
+
+.result button:first-of-type:hover {
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.15);
+}
+
+/* Delete Button */
+
+.result button:last-of-type {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.result button:last-of-type:hover {
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.15);
+}
+
+/* Keyboard Accessibility */
+
+button:focus-visible {
+  outline: 3px solid #a78bfa;
+  outline-offset: 4px;
+}
+
+/* Animations */
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 480px) {
+  body {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+    margin-bottom: 28px;
+  }
+
+  .input {
+    padding: 15px;
+  }
+
+  .add {
+    padding: 15px;
+    margin-bottom: 35px;
+  }
+
+  .result > div {
+    gap: 8px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .result button {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
